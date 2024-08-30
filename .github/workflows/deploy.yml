@@ -26,6 +26,12 @@ jobs:
           aws-region: us-east-1
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          
+      - name: Copy the Correct AppSpec File
+        run: cp ./${{ matrix.appspec }} ./appspec.yml
+
+      - name: Confirm AppSpec File
+        run: cat ./appspec.yml
 
       - name: Deploy to ${{ matrix.environment }}
         id: deploy
