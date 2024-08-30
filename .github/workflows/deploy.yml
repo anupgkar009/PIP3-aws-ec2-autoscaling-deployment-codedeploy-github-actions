@@ -26,6 +26,10 @@ jobs:
           aws-region: us-east-1
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          
+      - name: Set Deployment Group Environment Variable
+        run: echo "DEPLOYMENT_GROUP=${{ matrix.deployment_group }}" >> $GITHUB_ENV
+
 
       - name: Deploy to ${{ matrix.environment }}
         id: deploy
