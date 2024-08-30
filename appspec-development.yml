@@ -8,6 +8,6 @@ file_exists_behavior: OVERWRITE
 branch_config:
     wip\/.*: ~ 
     main:
-        # deploymentGroupName: DemoDeploymentG-${{ environment_name }}
+        deploymentGroupName: DemoDeploymentG-development
         deploymentGroupConfig:
             serviceRoleArn: arn:aws:iam::026090560198:role/PIP3-Codedeploy
